@@ -1,0 +1,31 @@
+{
+  "name": "padding",
+  "version": "0.0.1",
+  "description": "padding/unpadding with zero or string",
+  "main": "./lib/padding.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vwxyz/padding"
+  },
+  "keywords": [
+    "padding",
+    "unpadding",
+    "zero",
+    "string",
+    "file",
+    "number"
+  ],
+  "author": "Hitoshi.K",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vwxyz/padding/issues"
+  },
+  "homepage": "https://github.com/vwxyz/padding",
+  "devDependencies": {
+    "coffee-script": "^1.8.0",
+    "mocha": "^1.21.5"
+  }
+}
