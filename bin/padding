@@ -1,0 +1,5 @@
+#!/usr/bin/env coffee
+
+padding = require "../lib/index.js"
+padding.add process.cwd(),->
+  console.log "add padding"
