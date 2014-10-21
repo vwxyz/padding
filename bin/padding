@@ -2,4 +2,4 @@
 
 padding = require "../lib/index.js"
 padding.add process.cwd(),->
-  console.log "add padding"
+  console.log "Added padding successfully"
