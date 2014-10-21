@@ -4,7 +4,8 @@
   "description": "padding/unpadding with zero or string",
   "main": "./lib/padding.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "build": "coffee -bco lib/ src/"
   },
   "repository": {
     "type": "git",

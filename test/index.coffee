@@ -10,7 +10,7 @@ padding = require "../src/index.coffee"
 describe "Padding", ->
   tempDir = "#{__dirname}/.tmp"
   describe '#add(dir,callback)', ->
-    it "should add padding correctly in files which have a prefix like 'sample1.jpg', 'sample11.jpg',...", ->
+    it "should correctly add padding in files \n\twhich have a prefix like 'sample1.jpg', 'sample11.jpg',...", ->
       arr = ["sample1.jpg", "sample11.jpg", "sample120.jpg", "sample4000.jpg"]
       arr.forEach (i)->
         touch "#{tempDir}/#{i}"
@@ -20,7 +20,7 @@ describe "Padding", ->
             files
             [ 'sample0001.jpg','sample0011.jpg','sample0120.jpg','sample4000.jpg' ]
           ) 
-    it 'should add padding correctly in files without any prefixes: 1.jpg, 10.jpg, 200.jpg', ->
+    it 'should correctly add padding  \n\tin files without any prefixes: 1.jpg, 10.jpg, 200.jpg', ->
       arr = ["1.jpg", "11.jpg", "120.jpg", "4000.jpg"]
       arr.forEach (i)->
         touch "#{tempDir}/#{i}"
@@ -35,7 +35,7 @@ describe "Padding", ->
   afterEach (done)->
     fs.readdir tempDir, (err,files)->
       files.forEach (i)->
-        console.log "removing #{i}"
+        # console.log "removing #{i}"
         fs.unlink path.join(tempDir,i), (err)->
           if err
             console.log err

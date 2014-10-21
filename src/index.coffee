@@ -11,7 +11,6 @@ module.exports.add = (dirPath, cb)->
     files.forEach (i)->
       width = i.length
       prefix = i.split(/[0-9]/)[0]
-      console.log "prefix: #{prefix}"
 
       if minLength is 0
         minLength = width 
