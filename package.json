@@ -26,6 +26,8 @@
   "homepage": "https://github.com/vwxyz/padding",
   "devDependencies": {
     "coffee-script": "^1.8.0",
-    "mocha": "^1.21.5"
+    "mkdirp": "^0.5.0",
+    "mocha": "^1.21.5",
+    "touch": "0.0.3"
   }
 }
