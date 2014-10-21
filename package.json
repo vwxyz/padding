@@ -1,8 +1,8 @@
 {
   "name": "padding",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "padding/unpadding with zero or string",
-  "main": "./lib/padding.js",
+  "main": "./lib/index.js",
   "scripts": {
     "test": "mocha",
     "build": "coffee -bco lib/ src/"
