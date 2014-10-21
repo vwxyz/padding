@@ -1,6 +1,6 @@
 {
   "name": "padding",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "padding/unpadding with zero or string",
   "main": "./lib/index.js",
   "scripts": {
@@ -30,5 +30,8 @@
     "mkdirp": "^0.5.0",
     "mocha": "^1.21.5",
     "touch": "0.0.3"
+  },
+  "bin": {
+     "name":"./test/index.coffee"
   }
 }
