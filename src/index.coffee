@@ -1,6 +1,6 @@
 fs      = require "fs"
 
-module.exports.add = (dirPath)->
+module.exports.add = (dirPath, cb)->
   minLength = 0
   maxLength = 0
   prefix    = ""
@@ -44,6 +44,7 @@ module.exports.add = (dirPath)->
         oldPath
         oldPath.replace args[0], args[1]
       )
+    cb()
 
 module.exports.remove = (dirPath)->
   console.log "padding.remove"
