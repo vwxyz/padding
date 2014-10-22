@@ -40,7 +40,14 @@ describe "Padding", ->
             files
             [".DS_Store", "001.jpg", "002.jpg", "010.jpg", "077.jpg", "101.jpg", "209.jpg"]
           ) 
-
+  before ->
+    fs.exists tempDir,(exists)->
+      unless exists
+        mkdirp tempDir,(err)->
+          if err
+            console.log err
+          else
+            console.log "\t"+tempDir+" is created."
       
   beforeEach (done)->
     fs.readdir tempDir, (err,files)->
