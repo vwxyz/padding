@@ -8,9 +8,14 @@ module.exports.add = (dirPath, cb)->
 
   fs.readdir dirPath, (err, files)->
     if err then console.log err
+    # make dotfiles not-supported explicitly
+    files = files.filter (i)->
+      return (i[0] isnt ".")
     files.forEach (i)->
       width = i.length
       prefix = i.split(/[0-9]/)[0]
+
+      #detect in minLength
 
       if minLength is 0
         minLength = width 

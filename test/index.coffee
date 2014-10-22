@@ -30,8 +30,26 @@ describe "Padding", ->
             files
             [ '0001.jpg','0011.jpg','0120.jpg','4000.jpg' ]
           ) 
+    it 'should skip dotfiles like ".DS_Store" in zero padding processing', ->
+      arr = ["1.jpg", "10.jpg", "101.jpg", "2.jpg", "209.jpg", "77.jpg", ".DS_Store"]
+      arr.forEach (i)->
+        touch "#{tempDir}/#{i}"
+      padding.add tempDir,->
+        fs.readdir tempDir, (err,files)->
+          assert.deepEqual(
+            files
+            [".DS_Store", "001.jpg", "002.jpg", "010.jpg", "077.jpg", "101.jpg", "209.jpg"]
+          ) 
 
       
+  beforeEach (done)->
+    fs.readdir tempDir, (err,files)->
+      files.forEach (i)->
+        # console.log "removing #{i}"
+        fs.unlink path.join(tempDir,i), (err)->
+          if err
+            console.log err
+      done()
   afterEach (done)->
     fs.readdir tempDir, (err,files)->
       files.forEach (i)->
