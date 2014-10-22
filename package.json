@@ -1,7 +1,7 @@
 {
   "name": "padding",
-  "version": "0.0.5",
-  "description": "padding/unpadding with zero or string",
+  "version": "0.0.6",
+  "description": "A cli tool for file rename with zero padding",
   "main": "./lib/index.js",
   "scripts": {
     "test": "mocha",
