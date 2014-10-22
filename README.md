@@ -6,6 +6,7 @@
 - **zero configuration**
 - by zero padding, you get files whose name have **same length**
 - you can use this as both **cli tool** and **in your code**
+- dotfiles (like `.DS_Store`) are not supported currently
 
 
 ##Example
@@ -35,7 +36,7 @@ add padding
 
 - simple exmaple
 - In this example, the longest file name is `101.jpg` or `209.jpg`.
-- So `padding` changes all target files to have same length (7characters).
+- So **padding** changes all target files to have same length (**7characters**).
 
 
 ###files which have common prefix
