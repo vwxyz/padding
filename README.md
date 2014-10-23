@@ -2,7 +2,7 @@
 
 **padding** is a tiny node.js module for zero padding
 
-[![Build Status](https://travis-ci.org/vwxyz/padding.svg?branch=master)](https://travis-ci.org/vwxyz/padding) [![NPM version](https://badge.fury.io/js/padding.svg)](http://badge.fury.io/js/padding)[![Coverage Status](https://img.shields.io/coveralls/vwxyz/padding.svg)](https://coveralls.io/r/vwxyz/padding)
+[![Build Status](https://travis-ci.org/vwxyz/padding.svg?branch=master)](https://travis-ci.org/vwxyz/padding)  [![NPM version](https://badge.fury.io/js/padding.svg)](http://badge.fury.io/js/padding)
 
 
 - rename files with zero padding **automatically**
