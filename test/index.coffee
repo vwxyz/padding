@@ -40,6 +40,16 @@ describe "Padding", ->
             files
             [".DS_Store", "001.jpg", "002.jpg", "010.jpg", "077.jpg", "101.jpg", "209.jpg"]
           ) 
+    it 'should skip the files which have different prefix or suffix', ->
+      arr = ["1.jpg", "10.jpg", "101.jpg", "2.jpg", "209.jpg", "77.jpg", "exception.txt"]
+      arr.forEach (i)->
+        touch "#{tempDir}/#{i}"
+      padding.add tempDir,->
+        fs.readdir tempDir, (err,files)->
+          assert.deepEqual(
+            files
+            ["001.jpg", "010.jpg", "101.jpg", "002.jpg", "209.jpg", "077.jpg", "exception.txt"]
+          ) 
   before ->
     fs.exists tempDir,(exists)->
       unless exists
