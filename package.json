@@ -1,6 +1,6 @@
 {
   "name": "padding",
-  "version": "0.0.7",
+  "version": "0.1.0",
   "description": "A cli tool for file rename with zero padding",
   "main": "./lib/index.js",
   "scripts": {
