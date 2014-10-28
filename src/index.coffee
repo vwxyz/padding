@@ -8,9 +8,32 @@ module.exports.add = (dirPath, cb)->
 
   fs.readdir dirPath, (err, files)->
     if err then console.log err
-    # make dotfiles not-supported explicitly
-    files = files.filter (i)->
-      return (i[0] isnt ".")
+
+    # filter out: dotfiles ex. .DS_Store
+    files = files.filter (i)-> return (i[0] isnt ".")
+
+    # get all suffixes
+    suffixes = {}
+    files.forEach (i)-> 
+      suffix = i.split(".").pop()
+      if  !(suffixes.hasOwnProperty suffix)
+        suffixes["#{suffix}"] = 0
+      else 
+        suffixes["#{suffix}"] += 1
+
+    # detect commonSuffix
+    commonSuffix = {name:"none",counter:0}
+
+    for name,counter of suffixes
+      if counter > commonSuffix.counter
+        commonSuffix.name = name
+        commonSuffix.counter = counter
+
+    # filter out: the file without common suffix
+    files = files.filter (i)-> return  (i.search commonSuffix.name) isnt -1
+
+
+    # detect max/min length of files
     files.forEach (i)->
       width = i.length
       prefix = i.split(/[0-9]/)[0]
@@ -27,6 +50,7 @@ module.exports.add = (dirPath, cb)->
       else
         if maxLength < width
           maxLength = width
+    # console.log "prefix:#{prefix}"
     files.map (i)->
       oldPath = "#{dirPath}/#{i}"
       padding = ""

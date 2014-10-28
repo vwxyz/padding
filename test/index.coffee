@@ -48,7 +48,7 @@ describe "Padding", ->
         fs.readdir tempDir, (err,files)->
           assert.deepEqual(
             files
-            ["001.jpg", "010.jpg", "101.jpg", "002.jpg", "209.jpg", "077.jpg", "exception.txt"]
+            ["001.jpg", "002.jpg", "010.jpg", "077.jpg", "101.jpg", "209.jpg", "exception.txt"]
           ) 
   before ->
     fs.exists tempDir,(exists)->
