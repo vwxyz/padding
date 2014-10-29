@@ -1,4 +1,5 @@
 fs      = require "fs"
+mlcs    = require "mlcs"
 
 module.exports.add = (dirPath, cb)->
   minLength = 0
@@ -32,14 +33,13 @@ module.exports.add = (dirPath, cb)->
     # filter out: the file without common suffix
     files = files.filter (i)-> return  (i.search commonSuffix.name) isnt -1
 
+    # detect longest common sequence and save as prefix
+    prefix = mlcs files
+    prefix = ""  if prefix is "."+ commonSuffix.name # filter out case like prefix = "jpg","txt"
 
     # detect max/min length of files
     files.forEach (i)->
       width = i.length
-      prefix = i.split(/[0-9]/)[0]
-
-      #detect in minLength
-
       if minLength is 0
         minLength = width 
       else
@@ -50,7 +50,8 @@ module.exports.add = (dirPath, cb)->
       else
         if maxLength < width
           maxLength = width
-    # console.log "prefix:#{prefix}"
+
+    # rename file with padding
     files.map (i)->
       oldPath = "#{dirPath}/#{i}"
       padding = ""
