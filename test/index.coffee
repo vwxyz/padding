@@ -20,6 +20,16 @@ describe "Padding", ->
             files
             [ 'sample0001.jpg','sample0011.jpg','sample0120.jpg','sample4000.jpg' ]
           ) 
+    it "should correctly add padding in files \n\twhich have a prefix which contain number  like 'sample_01_1.jpg', 'sample_01_11.jpg',...", ->
+      arr = ["sample_01_1.jpg", "sample_01_11.jpg", "sample_01_120.jpg", "sample_01_4000.jpg"]
+      arr.forEach (i)->
+        touch "#{tempDir}/#{i}"
+      padding.add tempDir,->
+        fs.readdir tempDir, (err,files)->
+          assert.deepEqual(
+            files
+            [ 'sample_01_0001.jpg','sample_01_0011.jpg','sample_01_0120.jpg','sample_01_4000.jpg' ]
+          ) 
     it 'should correctly add padding  \n\tin files without any prefixes: 1.jpg, 10.jpg, 200.jpg', ->
       arr = ["1.jpg", "11.jpg", "120.jpg", "4000.jpg"]
       arr.forEach (i)->
