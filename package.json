@@ -33,5 +33,8 @@
   },
   "bin": {
     "padding": "./bin/padding"
+  },
+  "dependencies": {
+    "mlcs": "vwxyz/mlcs.git#fix-not-intended-change-of-argument"
   }
 }
