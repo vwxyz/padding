@@ -1,6 +1,6 @@
 {
   "name": "padding",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A cli tool for automatic file rename with zero padding",
   "main": "./lib/index.js",
   "scripts": {
@@ -35,6 +35,6 @@
     "padding": "./bin/padding"
   },
   "dependencies": {
-    "mlcs": "vwxyz/mlcs.git#fix-not-intended-change-of-argument"
+    "mlcs": "vslinko/mlcs.git"
   }
 }
