@@ -7,3 +7,6 @@ node_modules
 .tmp
 test/.tmp
 lib/
+.envrc
+-.sublime-project
+-.sublime-workspace
